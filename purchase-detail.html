@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!--HTML5 문서-->
+<html lang="ko">
+<!--주 언어 : 한국어-->
+<head>
+  <meta charset="UTF-8" />
+  <!--한글도 포함 가능한 문자 인코딩 방식-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--반응형 웹 디자인을 위한 설정, 모바일에서 디바이스 폭에 맞게 조정되도록 -->
+  <title>공동구매 상세</title> <!--브라우저 탭 제목-->
+
+  <style>
+    body {
+        font-family: Arial, sans-serif; 
+        /* Arial 글꼴을 기본으로 사용, 해당 글꼴이 없으면 sans-serif 계열 사용*/
+        margin: 0; /*브라우저 내 여백 없이 꽉 차게 만듦*/
+        background: #f8f8f8; /*배경색 설정*/
+        }
+        header {
+        background: #2c3e50;  /*배경색 설정*/
+        color: white;  /*텍스트 색 설정*/
+        padding: 1rem 2rem;  /*위아래 1rem, 좌우 2rem 내부 여백 설정*/
+        display: flex;  /*가로로 정렬*/
+        justify-content: space-between;  /*좌우 끝으로 정렬*/
+        align-items: center;  /*세로 중앙으로 정렬*/
+        }
+        header nav ul {  /*네비게이션 리스트 css*/
+        list-style: none;  /*점 설정 X -> 제거됨*/
+        display: flex; /*가로로 정렬*/
+        gap: 1rem; /*항목 사이 간격이 1rem*/
+        }
+        nav ul li a {
+        color: white; /*텍스트 색상 설정*/
+        text-decoration: none; /*밑줄 제거*/
+        }
+        main {
+        padding: 2rem; /*내부 여백 2rem으로 설정*/
+        }
+        .product-detail { /*product-detail section css*/
+        display: flex;
+        gap: 2rem; 
+        background: white;
+        padding: 1rem;
+        border-radius: 8px; /*모서리 둥글게 설정*/
+        }
+        .info ul {
+        padding-left: 1.2rem; /*들여쓰기 설정?*/
+        }
+        .progress-container {
+        margin: 1rem 0; /*위아래 여백 설정*/
+        }
+        .progress-bar { /*progress bar css*/
+        background: #ddd; 
+        height: 10px; /*높이 : 10*/
+        border-radius: 5px;
+        overflow: hidden; /*한쪽 내용이 넘칠 경우 잘리게 됨*/
+        }
+        .progress {
+        background: #27ae60;
+        height: 100%;
+        }
+        .chat, .reviews, .share, .qna, .related { /*chat, reviews, share, .. section css*/
+        background: white;
+        margin-top: 2rem; /*위쪽 여백 2rem*/
+        padding: 1rem; /*내부 여백 1rem*/
+        border-radius: 8px; 
+        }
+        .chat-box {
+        max-height: 150px; /*최대 높이 : 150*/
+        overflow-y: auto; /*넘어갈 시 세로 스크롤 생성*/
+        background: #eee;
+        padding: 0.5rem;
+        border-radius: 4px;
+        margin-bottom: 0.5rem; /*아래 여백 설정*/
+        }
+        .related-list {
+        display: flex;/*가로 나열*/
+        gap: 1rem; 
+        }
+        .related-list .item {
+        background: #ddd;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        }
+        footer {
+        text-align: center; /*가운데 정렬*/
+        padding: 2rem;
+        background: #eee;
+        }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🛒 공동구매 상세</div>
+    <!--로고와 함께 "공동구매 상세" 텍스트 표시-->
+    <nav>
+      <ul>
+        <li><a href="#">홈</a></li>
+        <li><a href="#">목록으로</a></li>
+        <!--네비게이션 바 구성 -> "홈"과 "목록으로"의 링크 제공 -->
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="product-detail">
+    <!--제품 정보를 보여주는 섹션-->
+      <img src="https://via.placeholder.com/300x200?text=제품이미지" alt="상품 이미지">
+      <!--대체용 이미지 사용-->
+      <div class="info">
+      <!--제품 정보 나열-->
+        <h2>무선 청소기 Pro</h2>
+        <p>고성능 무선 청소기! 공동구매 특가로 만나보세요.</p>
+        <ul>
+          <li>브랜드: 클린테크</li>
+          <li>배터리: 60분 연속 사용</li>
+          <li>무게: 2.1kg</li>
+        </ul>
+        
+        <div class="progress-container">
+        <!--공동구매 참여율 표시-->
+          <p>참여율: 80% (80 / 100명)</p>
+          <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+          <!--80% 정도로 채워진 progress bar 표현-->
+        </div>
+        <div class="countdown">⏳ 마감까지: <span id="timer">--:--:--</span></div>
+        <!--남은 시간을 타이머로 표시할 부분-->
+        <label>수량 선택: <input type="number" min="1" value="1"></label>
+        <!--최소 수량 : 1개-->
+        <button onclick="participate()">✅ 참여하기</button>
+        <!--버튼 클릭 시 participate()가 실행되며 동작 처리-->
+        <p class="delivery">배송 예상일: 2025-06-01 (무료배송)</p>
+      </div>
+    </section>
+
+    <section class="chat">
+     <!--채팅 정보를 보여주는 섹션-->
+      <h3>💬 참여자 채팅/댓글</h3>
+      <div class="chat-box" id="chat-box">
+        <p><strong>user01:</strong> 이거 진짜 싸네요</p>
+        <p><strong>user02:</strong> 지난번에도 구매했는데 만족했어요!</p>
+        <!--굵은 글씨로 표현-->
+      </div>
+      <input type="text" id="chat-input" placeholder="댓글을 입력하세요..." />
+      <!--댓글 입력창, javascript 제어 아이디는 chat-input, 
+      아무 것도 입력하지 않았을 시 댓글을 입력하세요... 라는 안내 문구가 뜨게 됨-->
+      <button onclick="sendMessage()">전송</button>
+      <!--sendMessage() 함수로 댓글을 동적으로 추가 가능-->
+    </section>
+
+    <section class="reviews">
+     <!--리뷰 정보를 보여주는 섹션-->
+      <h3>📝 참여자 후기</h3>
+      <ul>
+        <li>⭐️⭐️⭐️⭐️☆ - "가격 대비 성능이 좋아요."</li>
+        <li>⭐️⭐️⭐️⭐️⭐️ - "빠른 배송에 만족!"</li>
+      </ul>
+    </section>
+
+    <section class="share">
+     <!--공유 정보를 보여주는 섹션
+     사용자가 공동구매 링크를 다른 사람들과 공유할 수 있도록 도움-->
+      <h3>🔗 공유하기</h3>
+      <button onclick="copyLink()">📋 링크 복사</button>
+      <!--버튼 클릭 시 copyLink() 가 실행되며 동작 처리-->
+      <button>💬 카카오톡 공유</button>
+    </section>
+
+    <section class="qna">
+     <!--QnA 정보를 보여주는 섹션-->
+      <h3>❓ 문의하기</h3>
+      <input type="text" placeholder="문의 내용을 입력하세요..." />
+      <!--아무 것도 입력하지 않았을 시 문의 내용을 입력하세요... 라는 안내 문구가 뜨게 됨-->
+      <button>문의 등록</button>
+    </section>
+
+    <section class="related">
+    <!--관련 상품 정보를 보여주는 섹션-->
+      <h3>📦 관련 상품 추천</h3>
+      <div class="related-list">
+        <div class="item">🔌 핸디청소기</div>
+        <div class="item">🧼 욕실청소 세트</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 공동구매 플랫폼</p>
+    <!--사이트 하단에 저작권 등 표시-->
+  </footer>
+
+  <script>
+    function participate() {
+        alert("공동구매에 참여하였습니다!");
+        //participate() 함수 정의
+        //호출 시 브라우저에 '공동구매에 참여하였습니다!'라는 알림 팝업 뜨게 됨
+        //html 내 참여하기 버튼과 연결
+        }
+
+        function sendMessage() {
+        //sendMessage() 함수 정의
+        const input = document.getElementById("chat-input");
+        //id가 chat-input인 input 태그를 가져와 변수에 저장
+        const message = input.value.trim();
+        //입력값에서 양쪽 공백 제거 후 변수 message에 저장
+        if (message) { //message가 입력되어 있는 경우 실행
+            const chatBox = document.getElementById("chat-box");
+            //채팅 메시지 표시되는 div (id가 chat-box)를 불러옴
+            const p = document.createElement("p");
+            //새로운 p 태그 생성
+            p.innerHTML = "<strong>you:</strong> " + message;
+            chatBox.appendChild(p);
+            //채팅 내용 출력
+            input.value = "";
+            //초기화 작업
+        }
+        }
+
+        function copyLink() {
+        //copyLink() 함수 정의
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            alert("링크가 복사되었습니다!");
+            //navigator.clipboard.writeText() -> 현재 URL을 클립보드에 복사 작업
+            //복사 완료 시 '링크가 복사되었습니다!'의 알림 출력
+        });
+        }
+
+        // 마감일 카운트다운 (예시: 1일 후)
+        const deadline = new Date();
+        //현재 시각 기준으로 deadline 의 날짜 객체 생성
+        deadline.setDate(deadline.getDate() + 1);
+        //deadline : 현재 날짜 + 1로 설정 (1일 뒤 마감시간)
+        setInterval(() => { //타이머 기능 구현
+        const now = new Date(); //현재 시간 now 객체에 저장
+        const diff = deadline - now; //마감일과 현재 시간의 차이 계산
+        const hours = String(Math.floor(diff / 1000 / 60 / 60)).padStart(2, "0");
+        //남은 시간 계산 후 2자리 문자열로 변환
+        const minutes = String(Math.floor(diff / 1000 / 60) % 60).padStart(2, "0");
+        //남은 분 계산 후 2자리 문자열로 변환
+        const seconds = String(Math.floor(diff / 1000) % 60).padStart(2, "0");
+        //남은 초 계산 후 2자리 문자열로 변환
+        document.getElementById("timer").textContent = `${hours}:${minutes}:${seconds}`;
+        //id 가 timer인 텍스트를 hh:mm:ss 형태로 변환
+        }, 1000); //1000ms(1초) 간격으로 반복하여 실시간 카운트다운
+
+  </script>
+</body>
+</html>
