@@ -1,0 +1,26 @@
+.footer {
+  width: 390px; /* 고정 너비 */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  font-size: 12px;
+  color: #994d52;
+  font-family: 'Plus Jakarta Sans';
+}
+
+.depth-2-frame-0 {
+  align-self: stretch;
+  background-color: #fcf7f7;
+  border-top: 1px solid #f2e8e8; /*테테두리*/
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 8px 16px 12px; /* 상단 8px, 좌우 16px, 하단 12px */
+  gap: 8px;
+  height: 95px; /* 허그이지만 높이 제한을 위해 명시 가능 */
+  box-sizing: border-b
+}
