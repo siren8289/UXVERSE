@@ -1,55 +1,25 @@
-.search {
-  	width: 390px; /* 고정 */
-  	height: auto; /* 허그 콘텐츠 */
-  	position: absolute; /* 위치 고정 */
-  	top: 451px;
-  	left: 74px;
-  	display: flex;
-  	flex-direction: row;
-  	align-items: center;
-  	justify-content: space-between; /* 양쪽 정렬 */
-  	padding: 16px 16px 8px 16px;
-  	box-sizing: border-box;
-  	text-align: left;
-  	font-size: 16px;
-  	color: #8c5c5c;
-  	font-family: 'Plus Jakarta Sans';
+.search-container {
+  width: 358px;
+  height: 48px;
+  background-color: #F2E8EB;
+  border: 2px solid #8C5C5C;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 8px;
 }
 
-.depth-4-frame-0 {
-  	align-self: stretch;
-  	flex: 1;
-  	border-radius: 12px;
-  	display: flex;
-  	flex-direction: row;
-  	align-items: flex-start;
-  	justify-content: flex-start;
-  	overflow: hidden;
+.search-icon {
+  width: 24px;
+  height: 24px;
 }
 
-.depth-5-frame-0 {
-  	width: 40px;
-  	height: 48px;
-  	border-radius: 12px 0px 0px 12px;
-    padding-left: 16px;
-  	background-color: #f2e8eb;
-  	display: flex;
-  	align-items: center;
-  	justify-content: center;
-}
-
-.depth-5-frame-1 {
-  	flex: 1;
-  	height: 48px;
-  	border-radius: 0px 12px 12px 0px;
-  	background-color: #f2e8eb;
-  	display: flex;
-  	align-items: center;
-  	padding: 8px 16px 8px 8px;
-  	box-sizing: border-box;
-}
-
-.search1 {
-  	line-height: 24px;
-  	flex: 1;
+.search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: #8C5C5C;
+  outline: none;
 }
