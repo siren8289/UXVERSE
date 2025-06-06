@@ -1,0 +1,74 @@
+<!DOCTYPE html> <!--HTML5 문서 유형 선언-->
+<html lang="ko"> <!--문서의 언어를 한국어로 설정-->
+  <head>
+    <meta charset="UTF-8" /> <!-- 문자 인코딩을 UTF-8로 설정 (한글 지원) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--반응형 웹(기기 화면 너비에 맞춤)-->
+    <title>리뷰 & 추천 페이지</title> <!--브라우저 탭에 표시될 문서 제목-->
+    <link rel="stylesheet" href="review.css" /> <!--외부 CSS 파일 연결-->
+  </head>
+
+  <body> <!--사용자에게 보여지는 콘텐츠-->
+    <header>
+      <h1>⭐ 리뷰 & 추천</h1>
+      <nav> <!-- 내비게이션 영역 (검색, 필터 등등)-->
+        <!--
+        검색어 입력 필드 
+        type : 입력 형태를 지정(test:일반 텍스트)
+        id: 고유 식별자
+        placeholder : 입력 전 보여줄 안내문구
+        -->
+        <input 
+          type="text"
+          id="search"
+          placeholder="상품명, 키워드, 작성자 검색"
+        /> 
+        <select id="filter"> <!-- 필터 선택 메뉴 -->
+          <option value="">전체</option> <!--전체 항목 필터-->
+          <option value="group">공동구매</option> <!--공동구매 필터-->
+          <option value="rental">렌탈</option> <!-- 렌탈 필터-->
+        </select>
+        <select id="sort"> <!-- 정렬 기준 선택 메뉴 -->
+          <option value="recent">최신순</option> <!-- 최신순 정렬 -->
+          <option value="rating">별점순</option> <!-- 별점순 정렬 -->
+          <option value="title">상품명순</option> <!-- 상품명명순 정렬 -->
+        </select>
+        <button onclick="writeReview()">✍ 리뷰 작성</button>
+        <!-- 리뷰 작성 버튼, 클릭 시 자바스크립트 함수 실행 -->
+      </nav>
+    </header>
+
+    <main> <!-- 주요 콘텐츠-->
+      <section class="stats"> <!--리뷰통계 섹션-->
+        <h3>📊 리뷰 통계</h3>
+        <p>평균 평점: <strong id="avg-rating">4</strong> / 5.0</p>
+        <!--평균 평점 표시, JavaScript로 동적으로 변경 가능-->
+        <p>만족도: 매우 만족 👍👍👍</p>
+      </section>
+
+      <section id="review-list">
+        <!-- 리뷰 리스트 
+         실제 리뷰 항목이 javaScript로 이 영역에 추가됨-->
+      </section>
+
+      <section class="recommendations"> <!-- 추천 상품 섹션-->
+        <h3>🔍 AI 추천 상품</h3>
+        <ul> <!--순서 없는 목록의 시작-->
+          <li>무선청소기 플러스+</li> <!-- 목록의 항목-->
+          <li>스마트 냉풍기 미니</li>
+        </ul>
+      </section>
+
+      <section class="guide">  <!-- 리뷰 작성 가이드 섹션 -->
+        <h3>📝 리뷰 작성 가이드</h3>
+        <p>예시. 제품 사용 기간, 장단점, 만족도 등을 구체적으로 적어주세요.</p>
+      </section>
+    </main>
+
+    <footer> <!-- 페이지 하단 영역 -->
+      <p>© 2025 리뷰 플랫폼</p>
+    </footer>
+
+    <script src="review.js"></script> <!-- 외부 JavaScript 파일 연결 -->
+  </body>
+</html>
