@@ -1,0 +1,23 @@
+.header0-child {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	background-color: var(--color-gainsboro);
+  	width: 182px;
+  	height: 38px;
+}
+.welcome-to-my {
+  	position: absolute;
+  	top: 12px;
+  	left: 34px;
+}
+.header0 {
+  	width: 100%;
+  	position: relative;
+  	height: 38px;
+  	text-align: left;
+  	font-size: 12px;
+  	color: var(--color-black);
+  	font-family: var(--font-inter);
+}
+

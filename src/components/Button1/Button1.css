@@ -1,0 +1,26 @@
+.button1-child {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	background-color: var(--color-gainsboro);
+  	width: 132px;
+  	height: 109px;
+}
+.grouppurchase1 {
+  	margin: 0;
+}
+.grouppurchase {
+  	position: absolute;
+  	top: 55px;
+  	left: 22px;
+}
+.button1 {
+  	width: 100%;
+  	position: relative;
+  	height: 109px;
+  	text-align: left;
+  	font-size: 12px;
+  	color: var(--color-black);
+  	font-family: var(--font-inter);
+}
+
