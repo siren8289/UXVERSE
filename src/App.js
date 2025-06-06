@@ -10,10 +10,10 @@
 // import Reviews from "./pages/Reviews";
 import "./App.css";
 
-import Header0 from './components/Header0/Header0';
-import Header1 from './components/Header1/Header1';
-import Button0 from './components/Button0/Button0';
-import Button1 from './components/Button1/Button1';
+// import Header0 from './components/Header0/Header0';
+// import Header1 from './components/Header1/Header1';
+// import Button0 from './components/Button0/Button0';
+// import Button1 from './components/Button1/Button1';
 import Search from './components/Search/Search';
 
 function App() {

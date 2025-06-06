@@ -1,5 +1,5 @@
 import './Search.css';
-import SearchIcon from './Vector-0.svg';
+// import SearchIcon from './Vector-0.svg';
 
 const Search = () => {
   return (
